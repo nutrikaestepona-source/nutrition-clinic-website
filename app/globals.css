@@ -8,8 +8,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-coral: #ED6974;
+  --color-coral-strong: #D23949;
+  --color-navy: #213A76;
+  --color-cream: #F7F5F2;
+  --font-sans: var(--font-poppins);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +22,18 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }

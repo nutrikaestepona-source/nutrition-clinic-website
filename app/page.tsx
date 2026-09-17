@@ -1,69 +1,66 @@
-import Image from "next/image";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import ServiceSection from "@/components/ServiceSection";
+import Team from "@/components/Team";
+import Treatments from "@/components/Treatments";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Navbar />
+      <main className="pt-24">
+        <Hero />
+        <Treatments />
+
+        <ServiceSection
+          id="nutricion"
+          tone="cream"
+          title="Nutrición"
+          imagePosition="right"
+          imageAlt="Consulta de nutrición en Nutrika"
+          ctaLabel="Pedir cita de nutrición"
+          paragraphs={[
+            "En consulta de nutrición trabajamos la obesidad, las intolerancias alimentarias y el equilibrio de tu microbiota intestinal y de la piel.",
+            "Diseñamos un plan a tu medida, sin dietas genéricas ni promesas imposibles, para que los cambios se noten y se mantengan en el tiempo.",
+          ]}
+          specialist={{
+            name: "Alicia Garralón Domínguez",
+            role: "Nutricionista especializada en microbiota de la piel y obesidad",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <ServiceSection
+          id="psicologia"
+          tone="white"
+          title="Psicología"
+          imagePosition="left"
+          imageAlt="Consulta de psicología en Nutrika"
+          ctaLabel="Pedir cita de psicología"
+          paragraphs={[
+            "Te acompañamos en el cambio de hábitos y en cómo te relacionas con la comida y con tu cuerpo.",
+            "Todo en un lenguaje sencillo y cercano, sin jerga clínica, a tu ritmo.",
+          ]}
+        />
+
+        <ServiceSection
+          id="acupuntura"
+          tone="cream"
+          title="Acupuntura"
+          imagePosition="right"
+          imageAlt="Sesión de acupuntura en Nutrika"
+          ctaLabel="Pedir cita de acupuntura"
+          paragraphs={[
+            "La acupuntura te ayuda a recuperar el equilibrio y el bienestar general, como apoyo a tu proceso de nutrición.",
+            "Una terapia complementaria pensada para acompañar tu salud de forma natural.",
+          ]}
+        />
+
+        <Team />
+        <Contact />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
